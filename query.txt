@@ -1,0 +1,21 @@
+CREATE TABLE shares(
+   id INTEGER PRIMARY KEY AUTOINCREMENT,
+   user_id int not null,
+    no_shares int not null,
+    symbol text not null,
+    price_per_share Numeric not null,
+    name text not null,
+   FOREIGN KEY(user_id) REFERENCES users(id)
+   );
+
+   ALTER TABLE shares ADD FOREIGN KEY(user_id) REFERENCES users(id);
+
+   CREATE TABLE history(
+      id INTEGER PRIMARY KEY AUTOINCREMENT,
+      user_id int not null,
+       symbol text not null,
+       shares int not null,
+      price Numeric not null,
+       dt TEXT NOT NULL,
+       FOREIGN KEY(user_id) REFERENCES users(id)
+   );
