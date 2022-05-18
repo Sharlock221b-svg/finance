@@ -328,3 +328,8 @@ def add_cash():
           return redirect("/")
     else:
         return render_template("add_cash.html")
+   
+
+
+if __name__=="__main__":
+    app.run(debug=False,host='0.0.0.0')
